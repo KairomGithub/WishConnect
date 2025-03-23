@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wish Connect - Trang Chủ</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Firebase JS SDK phiên bản 8.x -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-storage.js"></script>
+  <script src="firebase-config.js"></script>
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <!-- Phần đăng nhập -->
+  <div id="login">
+    <h2>Đăng nhập để vào Wish Connect</h2>
+    <button id="login-btn">Đăng nhập với Google</button>
+  </div>
+
+  <!-- Ứng dụng chính -->
+  <div id="app" style="display: none;">
+    <!-- Header của ứng dụng -->
+    <div class="app-header">
+      <div class="brand">
+        <h2>Wish Connect</h2>
+      </div>
+      <button id="logout-btn">Đăng xuất</button>
+    </div>
+    
+    <!-- Cập nhật Avatar -->
+    <div id="avatar-section">
+      <img id="user-avatar" src="default-avatar.png" alt="Avatar">
+      <form id="avatar-form">
+        <label for="avatar-upload" class="avatar-upload-label">Chọn ảnh avatar</label>
+        <input type="file" id="avatar-upload" accept="image/*">
+        <button type="submit">Cập nhật Avatar</button>
+      </form>
+    </div>
+
+    <!-- Đăng bài -->
+    <div id="post-section">
+      <form id="post-form">
+        <textarea id="post-content" placeholder="Chia sẻ cảm xúc của bạn..." rows="4"></textarea>
+        <button type="submit">Đăng</button>
+      </form>
+    </div>
+    
+    <!-- Link chuyển đến trang hiển thị bài đăng -->
+    <a href="posts.html" id="posts-link">Xem tất cả bài đăng</a>
+  </div>
+</body>
+</html>

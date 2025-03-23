@@ -1,0 +1,24 @@
+name: Deploy to Firebase Hosting
+
+on:
+  push:
+    branches:
+      - main  # Hoặc "master" tùy nhánh chính của repo
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Lấy code từ GitHub
+        uses: actions/checkout@v2
+
+      - name: Cài đặt Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'  # Hoặc phiên bản mới nhất
+
+      - name: Cài đặt Firebase CLI
+        run: npm install -g firebase-tools
+
+      - name: Deploy lên Firebase Hosting
+        run: firebase deploy --token ${{ secrets.FIREBASE_TOKEN }}
